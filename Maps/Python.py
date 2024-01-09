@@ -11,6 +11,9 @@ value = dictionary[key]
 if key in dictionary:
   pass
 
+# Checking for Value: 
+if value in map.values():.
+
 # Iteration
 for key, value in dictionary.items():
   print(key, value)
