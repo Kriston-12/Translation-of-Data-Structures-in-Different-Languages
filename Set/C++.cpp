@@ -18,3 +18,9 @@ for (const auto& element : mySet) {
     // Process element
 }
 
+std::map<KeyType, ValueType> myMap;
+if (myMap.empty()) {
+    // The map is empty
+}
+
+
