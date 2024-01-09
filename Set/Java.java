@@ -23,5 +23,10 @@ public class Main {
         for (ValueType element : mySet) {
             // Process element
         }
+
+        Set<ValueType> mySet = new HashSet<>();
+        if (mySet.isEmpty()) {
+            // The set is empty
+        }
     }
 }
