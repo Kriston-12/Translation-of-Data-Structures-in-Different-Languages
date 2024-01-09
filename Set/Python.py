@@ -20,3 +20,7 @@ num_elements = len(my_set)
 # Iterate
 for element in my_set:
     # Process element
+
+my_set = set()
+if not my_set:  # or if len(my_set) == 0
+    # The set is empty
