@@ -6,8 +6,11 @@ map.put(key, value);
 // Access
 valueType value = map.get(key);
 
-// Check key-pair existence
-if (map.contains(key)){}
+// Check key exists
+if (map.containsKey(key)) {}
+
+// Check value exists
+if (map.containsValue(value) {}
 
 // Iteration
 for (Map.Entry<keyType, valueType> entry : map) {
