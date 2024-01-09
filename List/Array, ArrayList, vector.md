@@ -1,3 +1,3 @@
 - Arrays which is int[] arr = new int[]{1,2,3} and int[] arr = {1,2,3} in java, int arr[] = {1,2,3} in C++ are different from the object ArrayList in java, and vector<> in C++.
 - - ArrayList in java, and vector<> in C++ are dynamically structures, which means the size is changable. However, the size of arrays is fixed.
-  - ArrayList and vector are child classes of Object, which have buildin methods. However, arrays do not.
+- - ArrayList and vector are child classes of Object, which have buildin methods. However, arrays do not.
