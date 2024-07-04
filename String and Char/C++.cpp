@@ -39,3 +39,7 @@ std::string newString = str + " How are you?";  // "Hello, World! How are you?"
 
 // Remove (Strings are mutable in C++)
 str.erase(12);  // Remove characters starting from index 12
+
+// Pop out the last element of a string
+std::string st = "aaabb"
+st.pop_back(); // st now is aaab
