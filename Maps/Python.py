@@ -20,3 +20,11 @@ for key, value in dictionary.items():
 
 # Remove key-value pairs
 del dictionary[key]
+
+# Increment the value and update the dictionary
+dictionary[key] = dictionary.get(key, 0) + 1
+# Another way to increment the value
+if key in dictionary:
+  dictionary[key] += 1
+else:
+  dictionary[key] = 1
