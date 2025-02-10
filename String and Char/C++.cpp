@@ -1,6 +1,8 @@
 #include <iostream>
 #include <string>
 
+// String is muttable in c++, so modification to a string is in place--unlike string in python, immutable and modification will make a copy and cost extra memory.  
+
 // Creating strings
 std::string str1 = "Hello, World!";
 std::string str2("C++");
