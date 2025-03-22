@@ -100,12 +100,34 @@ int main() {
 // }
 
 
-// This is the output, we see emplace does not call our move constructor. and bc "def" is a rvalue, push will call shift constructor instead of copy constructor.
-// If we do std::string s("abc"); queue.push(s) then we will see Copy constructor as s is an instantiated object/string, it is lvalue.
-// --- push(std::string("abc")) ---
-// Constructor from std::string
-// Move constructor
-
-// --- emplace("def") ---
-// Constructor from std::string
-
+// About queue.emplace and queue.push
+//
+// In the code below, we demonstrate the behavioral difference between std::queue::push() and std::queue::emplace().
+//
+// The line:
+//     q.push(MyString("abc"));
+// constructs a temporary MyString object (an rvalue), then moves it into the queue.
+// Therefore, it invokes the constructor from std::string, followed by the move constructor.
+//
+// In contrast, the line:
+//     q.emplace("def");
+// forwards the constructor arguments directly to the internal storage of the queue (in-place construction).
+// Here, "def" is a const char* literal, which is implicitly converted to std::string,
+// and then passed to MyString’s constructor from std::string.
+//
+// Since no MyString temporary is created beforehand, the move constructor is not invoked.
+// Only the target constructor is called once — this is the key advantage of emplace over push.
+//
+// It's important to note:
+// If we write:
+//     std::string s = "abc";
+//     q.push(s);     // s is an lvalue — invokes the copy constructor
+//     q.emplace(s);  // same behavior — also invokes the copy constructor
+//
+// In such cases, both push() and emplace() behave identically because the argument is already a fully constructed object.
+//
+// Summary:
+// - emplace() avoids temporary object construction when arguments can be forwarded to a constructor.
+// - push() always requires a fully constructed object (copy or move occurs).
+// - When passing an existing object (lvalue or rvalue), push() and emplace() perform the same.
+// - emplace() shows its advantage only when passing constructor arguments directly.
