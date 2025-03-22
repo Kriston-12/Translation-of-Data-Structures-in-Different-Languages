@@ -99,6 +99,14 @@ int main() {
 //     return 0;
 // }
 
+// Output below
+// --- push(std::string("abc")) ---
+// Constructor from std::string
+// Move constructor
+
+// --- emplace("def") ---
+// Constructor from std::string
+
 
 // About queue.emplace and queue.push
 //
